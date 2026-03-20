@@ -1,0 +1,10 @@
+{
+  "product_name": "Elternratgeber - Schulstress befreit",
+  "product_description": "PDF-Guide für Eltern: 3 Fehler vermeiden, die Kinder zusätzlich stressen",
+  "price_eur": 19,
+  "currency": "eur",
+  "stripe_mode": "test",
+  "delivery_method": "email_webhook",
+  "pdf_url": "https://storage.elternratgeber.com/schulstress-befreit.pdf",
+  "webhook_endpoint": "/webhook/stripe"
+}

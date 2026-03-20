@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schulstress Befreit - Endlich entspannte Eltern, erfolgreiche Kinder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; text-align: center; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+        .hero .subtitle { font-size: 1.3rem; opacity: 0.95; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero .badges { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+        .badge { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 50px; font-size: 0.9rem; }
+        .cta-button { display: inline-block; background: #ff6b6b; color: white; padding: 20px 50px; font-size: 1.3rem; font-weight: 700; border-radius: 10px; text-decoration: none; transition: transform 0.3s; box-shadow: 0 10px 30px rgba(255,107,107,0.4); }
+        .cta-button:hover { transform: translateY(-3px); }
+        .price-tag { margin-top: 20px; font-size: 1.1rem; }
+        .price-tag .old { text-decoration: line-through; opacity: 0.7; }
+        .price-tag .new { font-size: 2rem; font-weight: 800; margin-left: 10px; }
+        
+        /* Problem Section */
+        .problem { padding: 80px 0; background: #f8f9fa; }
+        .problem h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #2d3748; }
+        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .problem-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .problem-card .emoji { font-size: 3rem; margin-bottom: 15px; }
+        .problem-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #e53e3e; }
+        
+        /* Solution */
+        .solution { padding: 80px 0; }
+        .solution h2 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+        .solution-intro { text-align: center; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem; color: #666; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .feature { text-align: center; padding: 30px; }
+        .feature .icon { font-size: 3rem; margin-bottom: 15px; }
+        .feature h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        
+        /* Contents */
+        .contents { padding: 80px 0; background: #f8f9fa; }
+        .contents h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .content-card { background: white; padding: 30px; border-radius: 15px; border-left: 5px solid #667eea; }
+        .content-card h3 { color: #667eea; margin-bottom: 15px; }
+        .content-card ul { list-style: none; }
+        .content-card li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .content-card li:before { content: "✓ "; color: #48bb78; font-weight: bold; }
+        
+        /* Bonus */
+        .bonus { padding: 60px 0; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; text-align: center; }
+        .bonus h2 { font-size: 2rem; margin-bottom: 30px; }
+        .bonus-items { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px; }
+        .bonus-item { background: rgba(255,255,255,0.2); padding: 20px 30px; border-radius: 10px; }
+        .bonus-item .value { font-size: 1.5rem; font-weight: 800; }
+        
+        /* Guarantee */
+        .guarantee { padding: 60px 0; text-align: center; }
+        .guarantee .seal { font-size: 5rem; margin-bottom: 20px; }
+        .guarantee h2 { font-size: 1.8rem; margin-bottom: 20px; }
+        
+        /* Final CTA */
+        .final-cta { padding: 80px 0; background: #2d3748; color: white; text-align: center; }
+        .final-cta h2 { font-size: 2.5rem; margin-bottom: 30px; }
+        .final-cta .urgency { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+        .final-cta .cta-button { font-size: 1.5rem; padding: 25px 60px; }
+        
+        /* FAQ */
+        .faq { padding: 80px 0; background: #f8f9fa; }
+        .faq h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+        .faq-item { max-width: 800px; margin: 0 auto 30px; background: white; padding: 25px; border-radius: 10px; }
+        .faq-item h3 { margin-bottom: 10px; color: #667eea; }
+        
+        /* Footer */
+        footer { padding: 40px 0; text-align: center; color: #666; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .problem-grid, .features, .content-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badges">
+                <span class="badge">⭐ 4.9/5 Bewertung</span>
+                <span class="badge">📥 500+ Downloads</span>
+                <span class="badge">🇩🇪 Made in Germany</span>
+            </div>
+            <h1>Endlich Schluss mit Schulstress!<br>Entspannte Eltern, erfolgreiche Kinder</h1>
+            <p class="subtitle">Der komplette Ratgeber mit Kommunikationsstrategien, Lernmethoden & Konzentrationstechniken - für weniger Stress und bessere Noten</p>
+            <a href="#kaufen" class="cta-button">Jetzt Download sichern →</a>
+            <div class="price-tag">
+                <span class="old">49,90€</span>
+                <span class="new">29€</span>
+                <div style="margin-top: 10px; font-size: 0.9rem;">Nur dieses Wochenende: 40% Rabatt!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Kennst du das?</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="emoji">😰</div>
+                    <h3>"Ich schaff das nicht!"</h3>
+                    <p>Dein Kind kommt frustriert von der Schule, hat Angst vor Prüfungen und fühlt sich überfordert - und du weißt nicht, wie du helfen sollst?</p>
+                </div>
+                <div class="problem-card">
+                    <div class="emoji">📱</div>
+                    <h3>Ablenkung überall</h3>
+                    <p>Handy, TikTok, Gaming - ständig kämpft ihr um Konzentration. Hausaufgaben dauern ewig und enden oft in Streit.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="emoji">😔</div>
+                    <h3>Schlechte Noten trotz Bemühung</h3>
+                    <p>Dein Kind lernt stundenlang, aber die Ergebnisse bleiben enttäuschend. Der Frust wächst, die Motivation sinkt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution">
+        <div class="container">
+            <h2>Die Lösung: Ein komplettes System</h2>
+            <p class="solution-intro">"Schulstress Befreit PLUS" ist kein weiterer Ratgeber mit gutgemeinten Tipps. Es ist ein bewährtes System aus Kommunikation, Lernmethoden und Konzentrationstechniken - entwickelt aus der Arbeit mit über 500 Familien.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="icon">💬</div>
+                    <h3>Bessere Kommunikation</h3>
+                    <p>Lerne die 3 größten Fehler kennen, die Schulstress verstärken - und wie du sie vermeidest</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🧠</div>
+                    <h3>Effektives Lernen</h3>
+                    <p>Die 5 besten Lernmethoden für Kinder: Cornell-Methode, Mind Mapping, Feynman-Technik & mehr</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🎯</div>
+                    <h3>Mehr Konzentration</h3>
+                    <p>Die 4-P-S-Formel und Pomodoro für Kids - für nachhaltigen Fokus ohne Ablenkung</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">📋</div>
+                    <h3>Praxis-Templates</h3>
+                    <p>Wochenplan, Tagesplan, Belohnungssystem - sofort ausdruckbar und einsetzbar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contents -->
+    <section class="contents">
+        <div class="container">
+            <h2>Was du bekommst</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Teil 1: Kommunikation</h3>
+                    <ul>
+                        <li>Die 3 größten Kommunikationsfehler</li>
+                        <li>Validierung statt Druck</li>
+                        <li>Wachstumsdenken fördern</li>
+                        <li>Selbstständigkeit stärken</li>
+                        <li>7-Tage Praxis-Plan</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>Teil 2: Lernmethoden</h3>
+                    <ul>
+                        <li>Wie das Gehirn wirklich lernt</li>
+                        <li>Cornell-Methode für Kids</li>
+                        <li>Mind Mapping leicht gemacht</li>
+                        <li>Das Leitner-System</li>
+                        <li>Feynman-Technik vereinfacht</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>Teil 3: Konzentration</h3>
+                    <ul>
+                        <li>Die 4-P-S-Formel</li>
+                        <li>Ablenkungen eliminieren</li>
+                        <li>Der perfekte Lernplatz</li>
+                        <li>Pomodoro für Kinder</li>
+                        <li>Belohnungssysteme</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>Teil 4: Tools & Templates</h3>
+                    <ul>
+                        <li>Wochen-Lernplan (PDF)</li>
+                        <li>Tagesplan Vorlage</li>
+                        <li>Belohnungssystem Sterne</li>
+                        <li>Karteikarten-Vorlagen</li>
+                        <li>Checklisten zum Ausdrucken</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus -->
+    <section class="bonus">
+        <div class="container">
+            <h2>🎁 Bonus: 3 Extra-Geschenke (Wert: 47€)</h2>
+            <div class="bonus-items">
+                <div class="bonus-item">
+                    <div class="value">19€</div>
+                    <div>Stress-Check Tool</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="value">15€</div>
+                    <div>Prüfungs-Countdown Planer</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="value">13€</div>
+                    <div>Eltern-Gesprächs-Guide</div>
+                </div>
+            </div>
+            <p style="font-size: 1.2rem;">Nur dieses Wochenende: Alle 3 Boni gratis dazu!</p>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="seal">🛡️</div>
+            <h2>30 Tage Geld-zurück-Garantie</h2>
+            <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: #666;">
+                Wenn du nicht 100% zufrieden bist, schreib mir einfach eine E-Mail. 
+                Ich erstatte dir den vollen Betrag zurück - ohne Wenn und Aber. 
+                Das Versprechen gebe ich dir, weil ich von diesem System überzeugt bin.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="kaufen">
+        <div class="container">
+            <h2>Bereit für weniger Stress und bessere Noten?</h2>
+            <p class="urgency">
+                ⚡ Nur dieses Wochenende: 40% Rabatt (statt 49,90€ nur 29€)<br>
+                🎁 Inklusive 3 Bonus-Geschenke im Wert von 47€<br>
+                🛡️ 30 Tage Geld-zurück-Garantie
+            </p>
+            <a href="#stripe-checkout-link" class="cta-button">Jetzt für 29€ kaufen →</a>
+            <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9rem;">
+                Sofortiger PDF-Download nach dem Kauf | Sichere SSL-Zahlung
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Häufige Fragen</h2>
+            <div class="faq-item">
+                <h3>Für welches Alter ist der Ratgeber geeignet?</h3>
+                <p>Der Ratgeber ist optimal für Eltern von Kindern im Grundschul- und Teenageralter (6-16 Jahre). Die Methoden können aber auch für jüngere oder ältere Kinder angepasst werden.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Wie lange habe ich Zugriff auf den Ratgeber?</h3>
+                <p>Unbegrenzt! Nach dem Kauf kannst du das PDF so oft herunterladen wie du willst. Du erhältst auch alle zukünftigen Updates kostenlos.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Was wenn es bei meinem Kind nicht funktioniert?</h3>
+                <p>Dann schreib mir einfach. Ich gebe dir persönliche Tipps oder erstatte dir das Geld zurück. Die 30-Tage-Garantie gilt ohne Wenn und Aber.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Elternratgeber | Kontakt: support@elternratgeber.de</p>
+            <p style="margin-top: 10px;">
+                <a href="#impressum" style="color: #666;">Impressum</a> | 
+                <a href="#datenschutz" style="color: #666;">Datenschutz</a> | 
+                <a href="#agb" style="color: #666;">AGB</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
