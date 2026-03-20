@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robofabio TikTok System Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+        }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; opacity: 0.9; }
+        .status-badge {
+            display: inline-block;
+            background: #00d084;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .metric:last-child { border-bottom: none; }
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .progress-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        .task-list {
+            list-style: none;
+        }
+        .task-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .task-list li:last-child { border-bottom: none; }
+        .check { color: #00d084; }
+        .pending { color: #ffa500; }
+        .blocked { color: #ff4444; }
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            opacity: 0.8;
+        }
+        .last-updated {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 TikTok System Dashboard</h1>
+            <p>Elternratgeber "Schulstress befreit" — Performance & Status</p>
+            <span class="status-badge">🟢 System Aktiv</span>
+        </header>
+
+        <div class="grid">
+            <!-- Content Progress -->
+            <div class="card">
+                <h2>📊 Content Fortschritt</h2>
+                <div class="metric">
+                    <span>Karussells erstellt</span>
+                    <span class="metric-value">10 / 20</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+                <div class="metric" style="margin-top: 15px;">
+                    <span>Bilder generiert</span>
+                    <span class="metric-value">50 / 100</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="card">
+                <h2>⚙️ System Status</h2>
+                <ul class="task-list">
+                    <li><span class="check">✅</span> PDF Ratgeber</li>
+                    <li><span class="check">✅</span> Landing Page</li>
+                    <li><span class="check">✅</span> 5 TikTok Carousels</li>
+                    <li><span class="check">✅</span> Batch 2 (5 Carousels)</li>
+                    <li><span class="pending">⏳</span> Batch 3 (wartet auf Bild-Stil)</li>
+                    <li><span class="blocked">🚫</span> Stripe Integration</li>
+                    <li><span class="blocked">🚫</span> TikTok Upload</li>
+                </ul>
+            </div>
+
+            <!-- Blockers -->
+            <div class="card">
+                <h2>🚫 Aktive Blocker</h2>
+                <ul class="task-list">
+                    <li>
+                        <span class="blocked">🚫</span>
+                        <div>
+                            <strong>Bild-Stil Entscheidung</strong><br>
+                            <small>Ideogram V3 vs FLUX-Pro — 1 Tag</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="blocked">🚫</span>
+                        <div>
+                            <strong>Stripe Account</strong><br>
+                            <small>Account erstellen — 2 Tage</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="blocked">🚫</span>
+                        <div>
+                            <strong>TikTok Upload Methode</strong><br>
+                            <small>API vs Manual — 1 Tag</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Next Actions -->
+            <div class="card">
+                <h2>🚀 Nächste Schritte</h2>
+                <ul class="task-list">
+                    <li><span class="pending">⏳</span> Bild-Stil Decision von Master Albert</li>
+                    <li><span class="pending">⏳</span> 75 Bilder generieren (Batch 3-5)</li>
+                    <li><span class="pending">⏳</span> Stripe Account einrichten</li>
+                    <li><span class="pending">⏳</span> TikTok Upload Methode wählen</li>
+                    <li><span class="pending">⏳</span> Launch vorbereiten</li>
+                </ul>
+            </div>
+
+            <!-- Metrics -->
+            <div class="card">
+                <h2>📈 Performance</h2>
+                <div class="metric">
+                    <span>Token Effizienz</span>
+                    <span class="metric-value">85%</span>
+                </div>
+                <div class="metric">
+                    <span>Fehler (24h)</span>
+                    <span class="metric-value" style="color: #00d084;">0</span>
+                </div>
+                <div class="metric">
+                    <span>Proaktive Tasks</span>
+                    <span class="metric-value">3</span>
+                </div>
+                <div class="metric">
+                    <span>Git Commits</span>
+                    <span class="metric-value">6</span>
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="card">
+                <h2>🔗 Ressourcen</h2>
+                <ul class="task-list">
+                    <li>📄 <a href="#">PDF Ratgeber</a></li>
+                    <li>🌐 <a href="#">Landing Page</a></li>
+                    <li>🖼️ <a href="#">Bilder Repository</a></li>
+                    <li>📧 <a href="#">Email Sequenz</a></li>
+                    <li>💻 <a href="https://github.com/Sahrapartnerships/robofabio-agent">GitHub Repo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="last-updated">🦾 Zuletzt aktualisiert: 21. März 2026, 02:10 CET</p>
+            <p style="margin-top: 10px;">Robofabio Autonomous Agent — v1.0</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-refresh every 5 minutes
+        setInterval(() => {
+            location.reload();
+        }, 300000);
+    </script>
+</body>
+</html>
