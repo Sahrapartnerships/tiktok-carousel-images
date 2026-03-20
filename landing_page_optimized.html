@@ -93,11 +93,11 @@
             </div>
             <h1>Endlich Schluss mit Schulstress!<br>Entspannte Eltern, erfolgreiche Kinder</h1>
             <p class="subtitle">Der komplette Ratgeber mit Kommunikationsstrategien, Lernmethoden & Konzentrationstechniken - für weniger Stress und bessere Noten</p>
-            <a href="#kaufen" class="cta-button">Jetzt Download sichern →</a>
+            <a href="#warteliste" class="cta-button">Jetzt auf die Warteliste →</a>
             <div class="price-tag">
                 <span class="old">49,90€</span>
                 <span class="new">29€</span>
-                <div style="margin-top: 10px; font-size: 0.9rem;">Nur dieses Wochenende: 40% Rabatt!</div>
+                <div style="margin-top: 10px; font-size: 0.9rem;">Launch am Wochenende — Sei dabei!</div>
             </div>
         </div>
     </section>
@@ -242,18 +242,30 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta" id="kaufen">
+    <section class="final-cta" id="warteliste">
         <div class="container">
             <h2>Bereit für weniger Stress und bessere Noten?</h2>
             <p class="urgency">
-                ⚡ Nur dieses Wochenende: 40% Rabatt (statt 49,90€ nur 29€)<br>
+                ⚡ Launch dieses Wochenende: 40% Rabatt (statt 49,90€ nur 29€)<br>
                 🎁 Inklusive 3 Bonus-Geschenke im Wert von 47€<br>
                 🛡️ 30 Tage Geld-zurück-Garantie
             </p>
-            <a href="#stripe-checkout-link" class="cta-button">Jetzt für 29€ kaufen →</a>
-            <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9rem;">
-                Sofortiger PDF-Download nach dem Kauf | Sichere SSL-Zahlung
-            </p>
+            
+            <!-- Email Capture Form -->
+            <div style="max-width: 500px; margin: 40px auto; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                <p style="margin-bottom: 20px; font-size: 1.1rem;">Trag dich ein und sei als Erster dabei:</p>
+                <form action="https://formspree.io/f/xnqevwjd" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required 
+                        style="padding: 15px; border: none; border-radius: 5px; font-size: 1rem;">
+                    <input type="hidden" name="subject" value="Elternratgeber Warteliste">
+                    <button type="submit" class="cta-button" style="border: none; cursor: pointer;">
+                        Ja, ich will dabei sein! →
+                    </button>
+                </form>
+                <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">
+                    Kein Spam. Nur der Launch-Reminder. Du kannst dich jederzeit abmelden.
+                </p>
+            </div>
         </div>
     </section>
 
