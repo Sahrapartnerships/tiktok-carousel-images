@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": "DWJoHb5DI-F",
+      "caption": "🚀 ENDLICH LIVE! 🚀 Nach Monaten der Arbeit ist er da...",
+      "type": "carousel",
+      "hashtags": [
+        "#schulstress",
+        "#elternratgeber",
+        "#lernmethoden"
+      ],
+      "posted_date": "2026-03-21",
+      "metrics": {
+        "24h": {},
+        "48h": {},
+        "7d": {},
+        "final": {}
+      },
+      "engagement_rate": 0,
+      "performance_score": 0
+    }
+  ],
+  "summary": {
+    "total_posts": 0,
+    "avg_engagement_rate": 0,
+    "best_performing_post": null,
+    "last_updated": null
+  }
+}

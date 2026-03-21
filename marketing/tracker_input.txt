@@ -1,0 +1,20 @@
+# Instagram Performance Tracker - Dateneingabe
+# Kopiere die Werte aus Instagram Insights hier ein
+
+POST_ID: DWJoHb5DI-F
+TIMEFRAME: final  # Optionen: 24h, 48h, 7d, final
+
+METRICS:
+likes: 0
+comments: 0
+saves: 0
+shares: 0
+reach: 0
+impressions: 0
+profile_visits: 0
+follows: 0
+
+# So fügst du Daten hinzu:
+# 1. Öffne Instagram App → Profil → Post → "Insights"
+# 2. Kopiere die Zahlen in die Zeilen oben
+# 3. Speichern und Script ausführen: python3 simple_tracker.py

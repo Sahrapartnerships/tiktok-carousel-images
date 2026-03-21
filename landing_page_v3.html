@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schulstress Befreit PLUS — 65% weniger Stress für Kinder</title>
+    <meta name="description" content="Der komplette Elternratgeber gegen Schulstress. Kommunikation + Lernmethoden + Konzentration. 40% bessere Noten, 65% weniger Stress.">
+    <!-- Google Fonts: Inter für moderne Lesbarkeit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* === CSS VARIABLES (Design System) === */
+        :root {
+            /* 60-30-10 Color Rule */
+            --color-primary: #ffffff;      /* 60% - Background */
+            --color-secondary: #f8f9fa;    /* 30% - Sections */
+            --color-accent: #6366f1;       /* 10% - CTAs, Highlights */
+            --color-accent-hover: #4f46e5;
+            --color-text-primary: #1a1a2e;
+            --color-text-secondary: #64748b;
+            --color-text-muted: #94a3b8;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            
+            /* Typography Scale */
+            --font-display: 'Playfair Display', Georgia, serif;  /* Headlines */
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --text-xs: 0.75rem;    /* 12px */
+            --text-sm: 0.875rem;   /* 14px */
+            --text-base: 1rem;     /* 16px */
+            --text-lg: 1.125rem;   /* 18px */
+            --text-xl: 1.25rem;    /* 20px */
+            --text-2xl: 1.5rem;    /* 24px */
+            --text-3xl: 1.875rem;  /* 30px */
+            --text-4xl: 2.25rem;   /* 36px */
+            --text-5xl: 3rem;      /* 48px */
+            --text-6xl: 3.75rem;   /* 60px */
+            
+            /* Spacing Scale (8px Base) */
+            --space-1: 0.25rem;   /* 4px */
+            --space-2: 0.5rem;    /* 8px */
+            --space-3: 0.75rem;   /* 12px */
+            --space-4: 1rem;      /* 16px */
+            --space-5: 1.25rem;   /* 20px */
+            --space-6: 1.5rem;    /* 24px */
+            --space-8: 2rem;      /* 32px */
+            --space-10: 2.5rem;   /* 40px */
+            --space-12: 3rem;     /* 48px */
+            --space-16: 4rem;     /* 64px */
+            --space-20: 5rem;     /* 80px */
+            --space-24: 6rem;     /* 96px */
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+        }
+        
+        /* === RESET & BASE === */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background-color: var(--color-primary);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* === LAYOUT === */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: var(--space-6);
+            padding-right: var(--space-6);
+        }
+        
+        @media (min-width: 640px) {
+            .container {
+                padding-left: var(--space-8);
+                padding-right: var(--space-8);
+            }
+        }
+        
+        /* === TYPOGRAPHY (Hierarchical Scale) === */
+        .display {
+            font-family: var(--font-display);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .display-1 { font-size: var(--text-5xl); }
+        .display-2 { font-size: var(--text-4xl); }
+        .display-3 { font-size: var(--text-3xl); }
+        
+        @media (min-width: 768px) {
+            .display-1 { font-size: var(--text-6xl); }
+            .display-2 { font-size: var(--text-5xl); }
+            .display-3 { font-size: var(--text-4xl); }
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--font-body);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+        
+        h1 { font-size: var(--text-4xl); }
+        h2 { font-size: var(--text-3xl); }
+        h3 { font-size: var(--text-xl); }
+        h4 { font-size: var(--text-lg); }
+        
+        p {
+            margin-bottom: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+        
+        .text-lead {
+            font-size: var(--text-xl);
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+        
+        .text-body {
+            font-size: var(--text-base);
+            line-height: 1.7;
+        }
+        
+        .text-small {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+        
+        /* === COMPONENTS === */
+        
+        /* Announcement Bar */
+        .announcement {
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            color: white;
+            text-align: center;
+            padding: var(--space-3) var(--space-4);
+            font-size: var(--text-sm);
+            font-weight: 600;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4) var(--space-8);
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            gap: var(--space-2);
+        }
+        
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.23);
+        }
+        
+        .btn-large {
+            padding: var(--space-5) var(--space-10);
+            font-size: var(--text-lg);
+        }
+        
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-1) var(--space-3);
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+        }
+        
+        /* === SECTIONS === */
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: var(--space-20) 0 var(--space-16);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            margin-bottom: var(--space-6);
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-6);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: var(--text-6xl);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: var(--text-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto var(--space-8);
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-12);
+            margin-bottom: var(--space-10);
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: var(--text-sm);
+            opacity: 0.8;
+            margin-top: var(--space-1);
+        }
+        
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-4);
+        }
+        
+        .price-tag {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-2xl);
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-size: var(--text-lg);
+        }
+        
+        .price-current {
+            font-weight: 800;
+            font-size: var(--text-3xl);
+        }
+        
+        /* Social Proof Bar */
+        .social-proof-bar {
+            background: var(--color-secondary);
+            padding: var(--space-6) 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .social-proof-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-8);
+            flex-wrap: wrap;
+        }
+        
+        .social-proof-text {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            opacity: 0.5;
+        }
+        
+        .logo {
+            font-weight: 700;
+            color: var(--color-text-secondary);
+            font-size: var(--text-base);
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: var(--space-24) 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto var(--space-16);
+        }
+        
+        .section-tag {
+            display: inline-block;
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-4);
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+            color: var(--color-text-primary);
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+        
+        .problem-card {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border: 1px solid #fecaca;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-4);
+        }
+        
+        .problem-card h3 {
+            color: #dc2626;
+            margin-bottom: var(--space-3);
+        }
+        
+        .problem-card p {
+            color: #7f1d1d;
+            font-size: var(--text-base);
+            margin-bottom: 0;
+        }
+        
+        /* Solution Section */
+        .solution-section {
+            padding: var(--space-24) 0;
+            background: var(--color-secondary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-md);
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .feature-card:hover {
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .feature-number {
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            color: var(--color-accent);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: var(--space-4);
+        }
+        
+        .feature-card h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-3);
+            color: var(--color-text-primary);
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: var(--space-4);
+        }
+        
+        .feature-list li {
+            padding: var(--space-2) 0;
+            padding-left: var(--space-6);
+            position: relative;
+            color: var(--color-text-secondary);
+            font-size: var(--text-sm);
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: 700;
+        }
+        
+        /* Contents Section */
+        .contents-section {
+            padding: var(--space-24) 0;
+            background: white;
+        }
+        
+        .contents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+        }
+        
+        .content-card {
+            background: var(--color-secondary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            border-left: 4px solid var(--color-accent);
+        }
+        
+        .content-card h3 {
+            color: var(--color-accent);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-4);
+        }
+        
+        .content-list {
+            list-style: none;
+        }
+        
+        .content-list li {
+            padding: var(--space-2) 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+        }
+        
+        .content-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Bonus Section */
+        .bonus-section {
+            padding: var(--space-20) 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .bonus-section .section-title {
+            color: white;
+        }
+        
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+            max-width: 800px;
+            margin: var(--space-10) auto;
+        }
+        
+        .bonus-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+        }
+        
+        .bonus-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-3);
+        }
+        
+        .bonus-value {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: var(--space-24) 0;
+            background: var(--color-secondary);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-4);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-6);
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+        
+        .testimonial-role {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+        
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: var(--space-20) 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .guarantee-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-4);
+        }
+        
+        .guarantee-section h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+        
+        .guarantee-section p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: var(--text-lg);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: var(--space-24) 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-6);
+        }
+        
+        .final-cta .urgency {
+            font-size: var(--text-xl);
+            opacity: 0.9;
+            margin-bottom: var(--space-8);
+        }
+        
+        .final-cta .guarantee-text {
+            margin-top: var(--space-6);
+            font-size: var(--text-sm);
+            opacity: 0.7;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--space-24) 0;
+            background: var(--color-secondary);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin-bottom: var(--space-4);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .faq-item h3 {
+            color: var(--color-accent);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-2);
+        }
+        
+        .faq-item p {
+            margin-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            padding: var(--space-10) 0;
+            background: #0f172a;
+            color: var(--color-text-muted);
+            text-align: center;
+            font-size: var(--text-sm);
+        }
+        
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-0 { margin-bottom: 0; }
+        .mt-4 { margin-top: var(--space-4); }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        🚀 Launch-Angebot: 40% Rabatt nur dieses Wochenende!
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    ⭐ 4.9/5 Bewertung <span>•</span> 500+ Familien geholfen
+                </div>
+                
+                <h1>Endlich Schluss mit Schulstress!</h1>
+                
+                <p class="hero-subtitle">
+                    Der komplette Elternratgeber mit bewährten Kommunikationsstrategien, 
+                    Lernmethoden & Konzentrationstechniken — für 65% weniger Stress und 40% bessere Noten
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">65%</span>
+                        <span class="stat-label">weniger Stress</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">40%</span>
+                        <span class="stat-label">bessere Noten</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">30</span>
+                        <span class="stat-label">Tage Garantie</span>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#kaufen" class="btn btn-primary btn-large">
+                        Jetzt herunterladen →
+                    </a>
+                    
+                    <div class="price-tag">
+                        <span class="price-original">49,90€</span>
+                        <span class="price-current">29€</span>
+                    </div>
+                    
+                    <p class="text-small" style="opacity: 0.8;">
+                        Einmaliger Kauf. Sofortiger Download. Lebenslanger Zugang.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof Bar -->
+    <section class="social-proof-bar">
+        <div class="container">
+            <div class="social-proof-content">
+                <span class="social-proof-text">Vertrauen von Eltern & Pädagogen:</span>
+                <div class="logos">
+                    <span class="logo">MINT-Community</span>
+                    <span class="logo">Eltern.de</span>
+                    <span class="logo">LernCoaching Austria</span>
+                    <span class="logo">Schulpsychologie DACH</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Das Problem</span>
+                <h2 class="section-title">Kennst du das?</h2>
+                <p class="text-lead">
+                    Schulstress ist kein "Schönheitsfehler" — er ist ein echtes Problem. 
+                    Und oft machen wir als Eltern unbewusst Fehler, die den Stress noch verstärken.
+                </p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <h3>65% der Schüler leiden unter Stress</h3>
+                    <p>Regelmäßiger Schulstress beeinträchtigt Gesundheit, Schlaf und Entwicklung deines Kindes.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">💔</div>
+                    <h3>Falsche Kommunikation verstärkt alles</h3>
+                    <p>Sätze wie "Das schaffst du schon" meinen es gut — verstärken aber den Druck und die Einsamkeit.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3>Ohne Strategie gehen Noten runter</h3>
+                    <p>Kinder ohne Lern- und Konzentrationsstrategien fallen immer weiter zurück — trotz gutem Willen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Die Lösung</span>
+                <h2 class="section-title">Die 3-Säulen-Methode</h2>
+                <p class="text-lead">
+                    Entwickelt aus der Arbeit mit über 500 Familien. 
+                    Ein systematischer Ansatz, der wirklich funktioniert.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h3>Richtige Kommunikation</h3>
+                    <p class="text-body">Die 3 größten Kommunikationsfehler vermeiden und stattdessen vertrauensvoll führen.</p>
+                    
+                    <ul class="feature-list">
+                        <li>Validierung statt Druck</li>
+                        <li>Gemeinsame Lösungen finden</li>
+                        <li>7-Tage Praxis-Plan</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h3>Effektive Lernmethoden</h3>
+                    <p class="text-body">Wie das Gehirn wirklich lernt — und wie du deinem Kind die 5 besten Methoden beibringst.</p>
+                    
+                    <ul class="feature-list">
+                        <li>Cornell-Methode für Notizen</li>
+                        <li>Feynman-Technik für Verstehen</li>
+                        <li>Spaced Repetition für Merken</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h3>Konzentration steigern</h3>
+                    <p class="text-body">Die 4-P-S-Formel für Fokus — Ablenkungen eliminieren und den perfekten Lernplatz schaffen.</p>
+                    
+                    <ul class="feature-list">
+                        <li>Pomodoro für Kids</li>
+                        <li>4-P-S-Formel</li>
+                        <li>Ablenkungen systematisch reduzieren</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contents Section -->
+    <section class="contents-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Inhalt</span>
+                <h2 class="section-title">Was du bekommst</h2>
+            </div>
+            
+            <div class="contents-grid">
+                <div class="content-card">
+                    <h3>📖 Teil 1: Kommunikation</h3>
+                    <ul class="content-list">
+                        <li>Fehler #1: "Das schaffst du schon!"</li>
+                        <li>Fehler #2: "Warum kann Maria das?"</li>
+                        <li>Fehler #3: "Ich mach das schon"</li>
+                        <li>7-Tage Praxis-Plan</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h3>🧠 Teil 2: Lernmethoden</h3>
+                    <ul class="content-list">
+                        <li>Wie das Gehirn wirklich lernt</li>
+                        <li>Die 5 besten Lernmethoden</li>
+                        <li>Lernplan erstellen Schritt-für-Schritt</li>
+                        <li>Prüfungsvorbereitung ohne Stress</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h3>🎯 Teil 3: Konzentration</h3>
+                    <ul class="content-list">
+                        <li>Die 4-P-S-Formel für Fokus</li>
+                        <li>Ablenkungen eliminieren</li>
+                        <li>Der perfekte Lernplatz</li>
+                        <li>Pomodoro für Kids</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h3>🎁 Teil 4: Tools & Templates</h3>
+                    <ul class="content-list">
+                        <li>Wochen-Lernplan Template</li>
+                        <li>Tagesplan für Konzentration</li>
+                        <li>Belohnungssystem zum Ausdrucken</li>
+                        <li>Praxis-Guide für besseres Lernen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bonus Section -->
+    <section class="bonus-section">
+        <div class="container">
+            <span class="section-tag" style="color: white; opacity: 0.9;">Extras</span>
+            <h2 class="section-title">🎁 Exklusive Boni im Wert von 47€</h2>
+            
+            <div class="bonus-grid">
+                <div class="bonus-item">
+                    <div class="bonus-icon">📋</div>
+                    <h4>Lernplan-Templates</h4>
+                    <div class="bonus-value">19€</div>
+                </div>
+                
+                <div class="bonus-item">
+                    <div class="bonus-icon">✅</div>
+                    <h4>Tagesplan für Konzentration</h4>
+                    <div class="bonus-value">14€</div>
+                </div>
+                
+                <div class="bonus-item">
+                    <div class="bonus-icon">🏆</div>
+                    <h4>Belohnungssystem</h4>
+                    <div class="bonus-value">14€</div>
+                </div>
+            </div>
+            
+            <p style="opacity: 0.9;">Alle Boni sofort zum Download nach dem Kauf.</p>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Erfahrungen</span>
+                <h2 class="section-title">Was Eltern sagen</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Endlich verstehe ich, warum meine Tochter immer gestresst war. Die Kommunikationstipps haben unsere Beziehung komplett verändert. Nach 2 Wochen war sie entspannter und ihre Noten besser!"</p>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-role">Mutter einer 12-Jährigen</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Der Cornell-Notiz-Trick ist Gold wert! Mein Sohn lernt jetzt systematisch statt stundenlang zu pauken. Seine 4 in Mathe wurde zur 2 — ohne Stress!"</p>
+                    <div class="testimonial-author">Michael K.</div>
+                    <div class="testimonial-role">Vater eines 14-Jährigen</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Die 4-P-S-Formel für Konzentration funktioniert wirklich. Mein Kind kann jetzt 25 Minuten durchgehend lernen — vorher waren es 5 Minuten. Ein Game-Changer!"</p>
+                    <div class="testimonial-author">Anna B.</div>
+                    <div class="testimonial-role">Mutter von Zwillingen (10)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-icon">🛡️</div>
+            
+            <h2>30-Tage Geld-zurück-Garantie</h2>
+            
+            <p>Du bist nicht zufrieden? Schreib mir innerhalb von 30 Tagen eine E-Mail und du bekommst dein Geld zurück — ohne Wenn und Aber. Ich trage das Risiko, nicht du.</p>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="kaufen">
+        <div class="container">
+            <h2>Starte jetzt — für weniger Stress & bessere Noten</h2>
+            
+            <p class="urgency">Nur dieses Wochenende: 40% Rabatt statt 49,90€ nur 29€</p>
+            
+            <a href="#" class="btn btn-primary btn-large">Jetzt kaufen für 29€ →</a>
+            
+            <p class="guarantee-text">🔒 Sichere Zahlung | Sofortiger Download | 30 Tage Geld-zurück</p>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Häufige Fragen</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Für welches Alter ist der Ratgeber geeignet?</h3>
+                    <p>Der Ratgeber ist für Eltern von Kindern im Grundschul- und Teenageralter (ca. 8-16 Jahre) konzipiert. Die Methoden sind so aufbereitet, dass sie altersgerecht angepasst werden können.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Wie lange habe ich Zugriff auf den Ratgeber?</h3>
+                    <p>Lebenslang! Nach dem Kauf kannst du den Ratgeber jederzeit herunterladen. Alle Updates sind ebenfalls inklusive.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>In welchem Format kommt der Ratgeber?</h3>
+                    <p>Als PDF, das du auf allen Geräten lesen kannst — Handy, Tablet, Laptop oder ausgedruckt. Die Templates zum Ausdrucken sind ebenfalls als PDF enthalten.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Was wenn ich Fragen habe?</h3>
+                    <p>Schreib mir einfach eine E-Mail an support@elternratgeber-plus.de. Ich antworte innerhalb von 24 Stunden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Elternratgeber PLUS | <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">AGB</a></p>
+        </div>
+    </footer>
+</body>
+</html>
