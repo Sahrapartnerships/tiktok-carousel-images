@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Schulstress Befreit + Lern-Erfolg</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary: #2563EB;
+            --secondary: #F59E0B;
+            --accent: #10B981;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --bg: #FFFFFF;
+            --bg-warm: #FEF7F0;
+            --bg-blue: #EFF6FF;
+            --bg-green: #ECFDF5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 11pt;
+        }
+        
+        /* Cover Page */
+        .cover {
+            width: 210mm;
+            height: 297mm;
+            background: linear-gradient(135deg, var(--bg-warm) 0%, #FFF 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        .cover-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .cover .subtitle {
+            font-size: 18pt;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+        
+        .cover-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14pt;
+        }
+        
+        /* Chapter Pages */
+        .chapter-page {
+            width: 210mm;
+            height: 297mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 60px;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        .chapter-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .chapter-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            z-index: 1;
+        }
+        
+        .chapter-content {
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .chapter-number {
+            font-size: 14pt;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        
+        .chapter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32pt;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        
+        .chapter-desc {
+            font-size: 12pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Content Pages */
+        .content-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 60px;
+            page-break-after: always;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            color: var(--text);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        h3 {
+            font-size: 16pt;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 32px 0 16px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        
+        /* Callout Boxes */
+        .callout {
+            background: var(--bg-blue);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .callout-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .callout.warning {
+            background: #FEF3C7;
+            border-left-color: var(--secondary);
+        }
+        
+        .callout.warning .callout-title {
+            color: #92400E;
+        }
+        
+        .callout.success {
+            background: var(--bg-green);
+            border-left-color: var(--accent);
+        }
+        
+        .callout.success .callout-title {
+            color: #065F46;
+        }
+        
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .info-card {
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .info-card h4 {
+            font-size: 14pt;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Quote */
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 16pt;
+            font-style: italic;
+            color: var(--text-light);
+            text-align: center;
+            padding: 32px;
+            margin: 32px 0;
+            border-top: 2px solid #E5E7EB;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            padding: 32px;
+            background: var(--bg-warm);
+            border-radius: 16px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 36pt;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 10pt;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        /* Illustration Placeholder */
+        .illustration {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #E5E7EB, #F3F4F6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-style: italic;
+            margin: 24px 0;
+        }
+        
+        .illustration img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+        
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        tr:nth-child(even) {
+            background: #F9FAFB;
+        }
+        
+        /* Page Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            right: 60px;
+            font-size: 9pt;
+            color: var(--text-light);
+            border-top: 1px solid #E5E7EB;
+            padding-top: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Template Pages */
+        .template-page {
+            background: var(--bg-warm);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 24px 0;
+        }
+        
+        .template-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20pt;
+            color: var(--primary);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .template-box {
+            background: white;
+            border: 2px dashed #CBD5E1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- COVER PAGE -->
+    <div class="cover">
+        <div class="cover-image" style="background: linear-gradient(135deg, #2563EB22, #F59E0B22);">
+            <img src="illustrations/cover_hero.png" alt="Entspannte Familie" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">
+        </div>
+        <h1>Schulstress Befreit<br>+ Lern-Erfolg</h1>
+        <p class="subtitle">Der komplette Guide für entspannte Eltern<br>und erfolgreiche Kinder</p>
+        <div class="cover-badge">PLUS Edition 2026</div>
+        <p style="margin-top: 40px; color: var(--text-light); font-size: 10pt;">
+            Mit bewährten Kommunikationsstrategien,<br>
+            Lernmethoden & Konzentrationstechniken
+        </p>
+    </div>
+
+    <!-- CHAPTER 1 -->
+    <div class="chapter-page" style="background: var(--bg-blue);">
+        <div class="chapter-content">
+            <div class="chapter-number">Teil 1</div>
+            <h2 class="chapter-title">Die 3 größten Kommunikationsfehler</h2>
+            <p class="chapter-desc">
+                Warum gut gemeinte Sätze oft das Gegenteil bewirken — und wie du mit kleinen Änderungen das Vertrauen deines Kindes stärkst.
+            </p>
+        </div>
+        <img src="illustrations/chapter1_communication.png" class="chapter-bg" alt="Kommunikation">
+    </div>
+
+    <!-- CONTENT: Communication Mistakes -->
+    <div class="content-page">
+        <h2>Fehler #1: „Das schaffst du schon!"</h2>
+        
+        <div class="illustration">
+            <img src="illustrations/fehler1_stress.png" alt="Gestresstes Kind">
+        </div>
+        
+        <div class="callout warning">
+            <div class="callout-title">⚠️ Das Problem</div>
+            <p>Dieser Satz klingt ermutigend, aber er überspringt das, was dein Kind gerade fühlt. Es fühlt sich allein gelassen mit seinem Stress.</p>
+        </div>
+        
+        <h3>Was dein Kind hört:</h3>
+        <p><em>„Deine Sorgen sind nicht wichtig. Sei einfach besser."</em></p>
+        
+        <h3>Besser so:</h3>
+        <div class="callout success">
+            <div class="callout-title">✓ Die Lösung</div>
+            <p><strong>„Ich sehe, dass du dich sorgst. Das ist okay. Lass uns zusammen schauen, was wir machen können."</strong></p>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>❌ Vermeiden</h4>
+                <ul>
+                    <li>„Das ist doch kein Problem!"</li>
+                    <li>„Du bist doch schlau!"</li>
+                    <li>„Andere schaffen das auch."</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4>✓ Stattdessen</h4>
+                <ul>
+                    <li>„Ich verstehe, das ist schwierig."</li>
+                    <li>„Erzähl mir mehr darüber."</li>
+                    <li>„Was brauchst du gerade?"</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <span>Schulstress Befreit — Teil 1</span>
+            <span>4</span>
+        </div>
+    </div>
+
+    <!-- More content pages... -->
+    <div class="content-page">
+        <h2>Fehler #2: „Warum kann Maria das?"</h2>
+        
+        <div class="illustration">
+            <img src="illustrations/fehler2_vergleich.png" alt="Vergleich">
+        </div>
+        
+        <div class="callout warning">
+            <div class="callout-title">⚠️ Das Problem</div>
+            <p>Vergleiche mit anderen Kindern zerstören das Selbstwertgefühl. Dein Kind fühlt sich nicht gut genug.</p>
+        </div>
+        
+        <div class="quote">
+            „Jedes Kind hat sein eigenes Tempo. Der Vergleich mit anderen ist der Dieb der Freude."
+        </div>
+        
+        <h3>Die alternative Perspektive:</h3>
+        <p>Vergleiche dein Kind nicht mit anderen — vergleiche es mit seinem gestrigen Ich. Wachstum ist der einzige Maßstab, der zählt.</p>
+        
+        <table>
+            <tr>
+                <th>Statt...</th>
+                <th>Sag...</th>
+            </tr>
+            <tr>
+                <td>„Maria hat auch eine 1."</td>
+                <td>„Du hast dich gegenüber letzter Woche verbessert!"</td>
+            </tr>
+            <tr>
+                <td>„Dein Bruder war immer gut in Mathe."</td>
+                <td>„Jeder hat seine Stärken. Was ist deine?"</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CHAPTER 2 -->
+    <div class="chapter-page" style="background: var(--bg-green);">
+        <div class="chapter-content">
+            <div class="chapter-number">Teil 2</div>
+            <h2 class="chapter-title">Die 5 besten Lernmethoden</h2>
+            <p class="chapter-desc">
+                Wie das Gehirn wirklich lernt — wissenschaftlich fundiert und kindgerecht erklärt.
+            </p>
+        </div>
+        <img src="illustrations/chapter2_learning.png" class="chapter-bg" alt="Lernen">
+    </div>
+
+    <!-- Learning Methods Content -->
+    <div class="content-page">
+        <h2>Die Cornell-Methode</h2>
+        
+        <div class="illustration">
+            <img src="illustrations/cornell_method.png" alt="Cornell Methode">
+        </div>
+        
+        <p>Die Cornell-Methode ist eines der effektivsten Systeme für Notizen. Sie wurde an der Cornell University entwickelt und hilft Kindern, Informationen besser zu strukturieren und zu behalten.</p>
+        
+        <div class="callout">
+            <div class="callout-title">💡 So funktioniert's</div>
+            <ol>
+                <li><strong>Spalten:</strong> Teile das Papier in drei Bereiche: Notizen, Stichwörter, Zusammenfassung</li>
+                <li><strong>Aufnehmen:</strong> Schreibe während des Unterrichts in die große Spalte</li>
+                <li><strong>Fragen:</strong> Formuliere nach der Stunde Fragen zu den Notizen</li>
+                <li><strong>Zusammenfassen:</strong> Schreibe eine kurze Zusammenfassung am Ende</li>
+            </ol>
+        </div>
+        
+        <div class="template-page">
+            <div class="template-title">Cornell Notizvorlage</div>
+            <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 20px; height: 400px;">
+                <div class="template-box" style="background: #F3F4F6;">
+                    <strong>Stichwörter & Fragen</strong><br><br>
+                    [Platz für Keywords]
+                </div>
+                <div class="template-box">
+                    <strong>Notizen</strong><br><br>
+                    [Platz für die Notizen]
+                </div>
+            </div>
+            <div class="template-box" style="margin-top: 20px;">
+                <strong>Zusammenfassung</strong><br><br>
+                [2-3 Sätze, die das Wichtigste zusammenfassen]
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAPTER 3 -->
+    <div class="chapter-page" style="background: linear-gradient(135deg, #FEF3C7, #FFF);">
+        <div class="chapter-content">
+            <div class="chapter-number">Teil 3</div>
+            <h2 class="chapter-title">Die 4-P-S-Formel für Fokus</h2>
+            <p class="chapter-desc">
+                Konzentration ist trainierbar. Mit diesem System schafft dein Kind es, 25 Minuten durchzuhalten — und mehr.
+            </p>
+        </div>
+        <img src="illustrations/chapter3_focus.png" class="chapter-bg" alt="Fokus">
+    </div>
+
+    <!-- Stats Page -->
+    <div class="content-page">
+        <h2>Was erreichen andere Familien?</h2>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">65%</div>
+                <div class="stat-label">weniger Stress</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">bessere Noten</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">30</div>
+                <div class="stat-label">Tage Garantie</div>
+            </div>
+        </div>
+        
+        <div class="quote">
+            „Nach zwei Wochen mit diesen Methoden war unsere Tochter entspannter und ihre Noten besser. Der Schulstress gehört der Vergangenheit an."
+            <br><br>
+            <span style="font-size: 12pt; font-style: normal;">— Mutter einer 12-Jährigen</span>
+        </div>
+    </div>
+
+    <!-- Templates Section -->
+    <div class="content-page">
+        <h2>Deine Vorlagen zum Ausdrucken</h2>
+        
+        <div class="template-page">
+            <div class="template-title">🗓️ Wochen-Lernplan</div>
+            <table style="width: 100%; margin-top: 20px;">
+                <tr>
+                    <th>Zeit</th>
+                    <th>Montag</th>
+                    <th>Dienstag</th>
+                    <th>Mittwoch</th>
+                    <th>Donnerstag</th>
+                    <th>Freitag</th>
+                </tr>
+                <tr><td>15:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>16:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>17:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+            </table>
+        </div>
+        
+        <div class="template-page" style="background: var(--bg-green);">
+            <div class="template-title">🏆 Belohnungssystem</div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px;">
+                <div class="template-box" style="text-align: center; min-height: 80px;">⭐</div>
+                <div class="template-box" style="text-align: center; min-height: 80px;">⭐</div>
+                <div class="template-box" style="text-align: center; min-height: 80px;">⭐</div>
+                <div class="template-box" style="text-align: center; min-height: 80px;">⭐</div>
+                <div class="template-box" style="text-align: center; min-height: 80px;">⭐</div>
+            </div>
+            <p style="text-align: center; margin-top: 16px;">5 Sterne = Belohnung wählen</p>
+        </div>
+    </div>
+
+</body>
+</html>
